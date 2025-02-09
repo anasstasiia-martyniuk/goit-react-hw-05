@@ -1,0 +1,92 @@
+.container {
+    padding: 16px;
+}
+
+h4 {
+    margin-bottom: 16px;
+    font-size: 16px;
+    color: orangered; 
+}
+
+.details {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+}
+
+.pic {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.details div {
+    text-align: center;
+}
+
+h3 {
+    font-size: 18px;
+    margin: 8px 0;
+}
+
+p {
+    font-size: 24px;
+    margin: 8px 0;
+}
+
+.extra {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+}
+
+li {
+    margin: 0;
+}
+
+.link {
+    font-weight: 800;
+    color: black;
+    text-decoration: none;
+    font-size: 44px;
+}
+
+.active {
+    color: orangered;
+}
+
+hr {
+    border: 0;
+    border-top: 1px solid #ccc;
+    margin: 16px 0;
+}
+
+@media (min-width: 768px) {
+    .details {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        gap: 16px;
+    }
+    .extra {
+        list-style: none;
+        padding: 0;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        gap: 32px;
+    }
+    .details div {
+        text-align: start;
+    }
+    .details2{
+        max-width: 1024px;
+    }
+}

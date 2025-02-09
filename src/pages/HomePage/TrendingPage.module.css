@@ -1,0 +1,101 @@
+.pic {
+    max-width: 300px;
+    border-radius: 4px;
+}
+
+.item {
+    list-style: none;
+    max-width: 300px;
+    padding: 20px;
+    border-radius: 16px;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.list {
+    columns: 1;
+    padding: 0;
+}
+
+.eight {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    gap: 20px;
+
+    text-decoration: none;
+    color: black;
+    text-align: center;
+
+    text-transform: uppercase;
+    font-size: 26px;
+    letter-spacing: 1px;
+}
+
+.pageTitle {
+    text-align: center;
+}
+
+.button{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: auto;
+    margin-left: auto;
+    margin-bottom: 24px;
+    width: 144px;
+    height: 44px;
+
+    text-transform: uppercase;
+    text-decoration: none;
+
+    border: 1px solid rgb(255, 255, 255);
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.buttonTop {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: auto;
+    margin-left: auto;
+    margin-bottom: 24px;
+    width: 144px;
+    height: 44px;
+
+    text-transform: uppercase;
+    text-decoration: none;
+
+    border: 1px solid rgb(255, 255, 255);
+    border-radius: 8px;
+    cursor: pointer;
+
+    color: inherit;
+    background-color: #f0f0f0; 
+}
+
+
+@media screen and (min-width: 768px) {
+    .list {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+        padding: 0;
+        list-style: none;
+    }
+}
+
+@media screen and (min-width: 1158px) {
+    .list {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media screen and (min-width: 1452px) {
+    .list {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
