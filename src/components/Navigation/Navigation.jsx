@@ -25,7 +25,6 @@ export default function Navigation() {
                     <nav className={clsx(css.nav, isMenuOpen && css.open)}>
                         <NavLink to="/" className={makeLinkClass} onClick={closeMenu}>Trending</NavLink>
                         <NavLink to="/movies" className={makeLinkClass} onClick={closeMenu}>Search</NavLink>
-                        <NavLink to="/random" className={makeLinkClass} onClick={closeMenu}>Random</NavLink>
                     </nav>
                 </div>
             </div>

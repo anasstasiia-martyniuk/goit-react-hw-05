@@ -1,13 +1,11 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
-import { Link, useLocation } from "react-router-dom";
 import css from "./TrendingPage.module.css"
+import MovieList from "../../components/MovieList/MovieList";
 
 export default function TrendingPage() {
     const [movies, setMovies] = useState([]);
-    const location = useLocation();
     const [page, setPage] = useState(1);
-    const imageBaseUrl = 'https://image.tmdb.org/t/p/w500';
 
     useEffect(() => {
         const fetchMovies = async (page) => {
@@ -43,19 +41,7 @@ export default function TrendingPage() {
     return (
         <>
             <h1 className={css.pageTitle} id="trending">Trending today</h1>
-            <ul className={css.list}>
-                {movies.map(movie => (
-                    <div className={css.aas} key={movie.id}>
-                        <li className={css.item} key={movie.id}>
-                            <Link className={css.eight} to={`/movies/${movie.id}`} state={location}>
-                                <img className={css.pic} src={`${imageBaseUrl}${movie.poster_path}`} alt={`${movie.title} poster`} />
-                                {movie.title}
-                            </Link>
-                            <hr />
-                        </li>
-                    </div>
-                ))}
-            </ul>
+        <MovieList movies={movies} />
             {page < 3 ? (
                 <button className={css.button} onClick={loadMoreMovies}>Load More</button>
             ) : (

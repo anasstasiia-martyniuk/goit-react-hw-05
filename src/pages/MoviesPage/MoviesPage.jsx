@@ -1,15 +1,13 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
-import { Link, useLocation, useSearchParams } from "react-router-dom";
+import { useSearchParams } from "react-router-dom";
 import css from "./MoviesPage.module.css";
-import noPoster from "../../components/NothingFoundPoster/NothingFound.png";
+import MovieList from "../../components/MovieList/MovieList";
 
 export default function MoviesPage() {
     const [searchResults, setSearchResults] = useState([]);
     const [params, setParams] = useSearchParams();
     const searchTerm = params.get("search") ?? "";
-    const location = useLocation();
-    const baseImageUrl = "https://image.tmdb.org/t/p/w500"; 
 
     const changeSearch = (newSearch) => {
         params.set("search", newSearch);
@@ -53,21 +51,7 @@ export default function MoviesPage() {
                 />
                 <span>🔍</span>
             </form>
-            <ul className={css.list}>
-                {searchResults.map((movie) => (
-                    <li className={css.item} key={movie.id}>
-                        <Link className={css.link} to={`/movies/${movie.id}`} state={location}>
-                            <img
-                                src={movie.poster_path ? `${baseImageUrl}${movie.poster_path}` : noPoster}
-                                alt={movie.title}
-                                className={css.poster}
-                            />
-                            <span className={css.title}>{movie.title}</span>
-                        </Link>
-                        <hr />
-                    </li>
-                ))}
-            </ul>
+          <MovieList movies={searchResults} />
         </>
     );
 }
